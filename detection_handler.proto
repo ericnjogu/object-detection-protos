@@ -1,0 +1,36 @@
+syntax = 'proto3';
+
+/*
+compile with:
+ (object-detection) mugo@eric-aspire:~/ai-object-detection/video-tracking/proto/generated$ python -m grpc_tools.protoc -I ../ --grpc_python_out=. --python_out=. ../detection_handler.proto
+*/
+
+service DetectionHandler {
+  /*
+    handle a detection output
+  */
+  rpc handle_detection(handle_detection_request) returns(handle_detection_response){}
+}
+
+message float_array {
+  repeated float numbers = 1;
+  repeated int32 shape = 2;
+}
+
+message handle_detection_request {
+  string instance_name = 1;
+  string source = 2;
+  float start_timestamp = 3;
+  int64 frame_count = 4;
+  repeated float detection_scores = 5;
+  repeated float detection_classes = 6;
+  float_array detection_boxes = 7;
+  float_array frame = 8;
+  map <string, string> string_map = 9;
+  map <string, float> float_map = 10;
+  map <int32, string> category_index = 11;
+}
+
+message handle_detection_response {
+  bool status = 1;
+}
