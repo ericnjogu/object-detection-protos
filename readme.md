@@ -1,9 +1,19 @@
-# Video Object Detection Protobufs
+# Object Detection Protobufs
 This repo holds the protobuf files for the protobuf messages that are exchanged between the various services.
 
 Once a frame is retrieved from a source, it is placed in a message then published to a reddis channel. Another service picks up the message and uses it for to request an inference after which it is placed on another channel with the prediction output.
 
 Finally other services like the web service take the message from the channel and make it available to a react app via HTTP EventSource.
+
+## Setup
+- clone or download the [tensorflow serving repo](https://github.com/tensorflow/serving)
+- generate the tensor flow prediction service python grpc stubs - note the tensorflow core and tensorflow serving repo local roots have been given to resolve the protobuf dependencies
+
+ `python -m grpc_tools.protoc -I ~/tensorflow-serving-repo/ -I ~/tensorflow-core-repo --grpc_python_out=proto/generated/ --python_out=proto/generated ~/tensorflow-serving-repo/tensorflow_serving/apis/*.proto`
+
+- generate the object detection protobuf message types, client, server grpc code.
+
+ `python -m grpc_tools.protoc -I proto --grpc_python_out=proto/generated/ --python_out=proto/generated proto/detection_handler.proto`
 
 ## Related Projects
 - https://github.com/kunadawa/video-object-detection
