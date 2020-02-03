@@ -12,9 +12,9 @@ git diff --exit-code --quiet ./env.yaml
 if [[ $? -eq 0 ]]; then
     echo "Conda environment not changed. No additional commit"
 else
-    echo "Conda environment changed. Committing new env.yaml"
+    echo "Conda environment changed. Commit new env.yaml"
     #git add ./env.yaml
     #git commit -m "Updating conda environment"
-    echo 'You need to push again to push additional "Updating conda environment" commit'
+    #echo 'You need to push again to push additional "Updating conda environment" commit'
     exit 1
 fi
