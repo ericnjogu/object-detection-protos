@@ -1,0 +1,21 @@
+package:
+  name: juu-object-detection-protos
+  version: 0.1
+
+source:
+  git_rev:
+  git_url: https://github.com/kunadawa/object-detection-protos
+
+requirements:
+  build:
+    - python
+    - setuptools
+
+  run:
+    - python
+
+test:
+  imports:
+
+about:
+  home:
