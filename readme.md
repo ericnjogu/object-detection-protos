@@ -21,6 +21,10 @@ Finally other services like the web service take the message from the channel an
 
  `python -m grpc_tools.protoc -I . --grpc_python_out=api/generated/ --python_out=api/generated api/detection_handler.proto`
 
+- build conda package for local use
+
+  `conda build .`
+
 ## Related Projects
 - https://github.com/kunadawa/video-object-detection
 - https://github.com/kunadawa/object-detection-event-web-server
