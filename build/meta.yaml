@@ -3,19 +3,22 @@ package:
   version: 0.1
 
 source:
-  git_rev:
-  git_url: https://github.com/kunadawa/object-detection-protos
+  path: ./
 
 requirements:
   build:
     - python
-    - setuptools
 
   run:
     - python
+    - grpcio
 
-test:
-  imports:
+outputs:
+  - name: juu-object-detection-protos
+    files:
+      - api
 
 about:
-  home:
+  home: https://github.com/kunadawa/object-detection-protos
+  summary: holds the protobuf files for the protobuf messages that are exchanged between the various services
+  license: MIT
