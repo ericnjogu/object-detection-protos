@@ -15,11 +15,11 @@ Finally other services like the web service take the message from the channel an
 - Download or clone the [tensorflow core repo](https://github.com/tensorflow/tensorflow)
 - generate the tensor flow prediction service python grpc stubs - note the tensorflow core and tensorflow serving repo local roots have been given to resolve the protobuf dependencies
 
- `python -m grpc_tools.protoc -I ~/tensorflow-serving-repo/ -I ~/tensorflow-core-repo --grpc_python_out=generated/ --python_out=generated ~/tensorflow-serving-repo/tensorflow_serving/apis/*.proto`
+ `python -m grpc_tools.protoc -I ~/tensorflow-serving-repo/ -I ~/tensorflow-core-repo --grpc_python_out=api/generated/ --python_out=api/generated ~/tensorflow-serving-repo/tensorflow_serving/apis/*.proto`
 
 - generate the object detection protobuf message types, client, server grpc code.
 
- `python -m grpc_tools.protoc -I . --grpc_python_out=./generated/ --python_out=./generated detection_handler.proto`
+ `python -m grpc_tools.protoc -I . --grpc_python_out=api/generated/ --python_out=api/generated api/detection_handler.proto`
 
 ## Related Projects
 - https://github.com/kunadawa/video-object-detection
