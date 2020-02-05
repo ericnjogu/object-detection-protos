@@ -1,2 +1,4 @@
 __pycache__
 generated
+dist
+juu_object_detection_protos.egg-info
