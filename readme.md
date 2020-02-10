@@ -25,6 +25,11 @@ Finally other services like the web service take the message from the channel an
 
   `conda build .`
 
+- upload package to anaconda.org
+
+ - `anaconda login`
+ - `anaconda upload /home/mugo/miniconda3/envs/object_detection_protos/conda-bld/linux-64/juu-object-detection-protos-0.1-py37_0.tar.bz2`
+
 ## Related Projects
 - https://github.com/kunadawa/video-object-detection
 - https://github.com/kunadawa/object-detection-event-web-server
