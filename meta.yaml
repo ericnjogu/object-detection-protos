@@ -1,5 +1,5 @@
 package:
-  name: juu-object-detection-protos
+  name: juu_object_detection_protos
   version: 0.1
 
 source:
@@ -13,12 +13,8 @@ requirements:
     - python
     - grpcio
 
-outputs:
-  - name: juu-object-detection-protos
-    files:
-      - api
-
 about:
   home: https://github.com/kunadawa/object-detection-protos
-  summary: holds the protobuf files for the protobuf messages that are exchanged between the various services
+  summary: holds the protobuf files for the protobuf messages that are exchanged between object detection services
   license: MIT
+  #readme: ./README.md
