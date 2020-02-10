@@ -3,7 +3,7 @@
 #exit 1
 
 # Export conda environment to yaml file
-conda env export -n object-detection-protos --file ./env.yaml --from-history
+conda env export -n object_detection_protos --file ./env.yaml --from-history
 
 # Check if new environment file is different from original
 git diff --exit-code --quiet ./env.yaml
